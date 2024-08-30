@@ -1,0 +1,7 @@
+{
+  "name": "Artemis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
