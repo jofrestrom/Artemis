@@ -1,19 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Registrar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <form>
+    <form [formGroup]="persona" (ngSubmit)="registrar()">
 
         <ion-input type="text"></ion-input>
+        <ion-input type="password"></ion-input>
         
-        <!--<ion-input *ngIf="persona.controls.tiene_equipo.value=='si"></ion-input>-->
-      
         <ion-button>Registrar</ion-button>
-    </form>
-
+      </form>
+      <p>{{persona.value | json}}</p>
   </ion-card>
 </ion-content>

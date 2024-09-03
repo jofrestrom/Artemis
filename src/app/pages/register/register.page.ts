@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,11 +8,6 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
   persona = new FormGroup({
 
     rut: new FormControl(),
@@ -22,4 +18,16 @@ export class RegisterPage implements OnInit {
     nombre_equipo: new FormControl()
 
   });
+  
+  constructor(private router: Router){ }
+
+  ngOnInit() {
+  }
+    
+  public registrar():void{
+    console.log(this.persona.value);
+
+    this.router.navigate(['/login']);
+
+  }
 }
